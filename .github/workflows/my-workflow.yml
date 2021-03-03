@@ -23,3 +23,7 @@ jobs:
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
+      - name: create-issue
+          uses: ./.github/actions/issue-maker
+          with:
+            joke: ${{steps.jokes.outputs.joke-output}}
